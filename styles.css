@@ -1,0 +1,671 @@
+@charset "UTF-8";
+
+
+/* 全体設定 */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", sans-serif;
+    text-align: center;
+    align-content: center;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+a {
+    color: rgb(155, 155, 155);
+}
+
+a:haver {
+    color:white;
+}
+
+
+h2 {
+    font-size: 20px;
+    padding: 60px 20px 20px 20px;
+    /* display: block; */
+    clear: both;
+}
+
+.more {
+    font-size: 12px;
+    border-bottom: 1px solid white;
+    margin: 20px 0 20px 0;
+}
+
+.col-sm-12, .col-sm-10 {
+    padding: 0;
+    clear: both;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+
+
+
+/* HEADER */
+
+.header {
+    background-color: rgba(33, 66, 66, 0.6);
+    width: 100%;
+    height: 34px;
+    position: absolute;
+    text-decoration :none;
+    border-radius: 2px;
+    transition: .3s;
+}
+
+
+
+.space-between {
+    z-index: 9995;
+    width: 100%;
+    height: 34px;
+    text-align: right;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.site-name {
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 9999;
+    font-size: 20px;
+    width: 220px;
+    /* text-align: left; */
+    padding: 2px 8px;
+    margin-right: 20px;
+    position: absolute;
+    clear: both;
+}
+
+
+
+
+/* ハンバーガーメニュー */
+
+#nav-drawer {
+    padding-top: 7px;
+    height: 34px;
+  }
+  
+  .nav-unshown {
+    display: none;
+  }
+  
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+  }
+  
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: rgb(255, 255, 255);
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  #nav-close {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  #nav-content {
+    z-index: 9998;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding: 50px;
+    width: 50%;
+    max-width: 220px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    transition: .3s ease-in-out;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+  }
+
+  #nav-content a {
+      color: rgb(155, 155, 155);
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      clear: both;
+  }
+  
+  #nav-input:checked ~ #nav-close {
+    display: block;
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+
+
+
+
+
+
+/* NAV */
+
+.nav {
+    width: 600px;
+    height: 34px;
+    margin-right: 15px;
+    float: right;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav a {
+    z-index: 9996;
+    color: rgb(155, 155, 155);
+    font-size: 12px;
+    padding: 5px 10px; 
+    display: inline-block;
+    /* position: relative; */
+}
+
+
+
+
+/* 画面幅が1000pxを下回った時 */
+@media (max-width: 1000px) { 
+    .nav {
+        width: 500px;
+        margin-right: 30px;
+    }
+}
+
+/* 画面幅が850pxを下回った時 */
+@media (max-width: 850px) { 
+    .nav {
+        width: 400px;
+        margin-right: 40px;
+    }
+}
+
+/* 画面幅が680pxを下回った時 */
+@media (max-width: 680px) { 
+    .nav {
+        width: 100%;
+        margin-top: 34px; 
+        margin-right: 0;
+        justify-content: space-evenly;
+        background-color:rgba(33, 66, 66, 0.6);
+    }
+    
+    .header {
+        background-color: black;
+    }
+}
+
+
+
+
+
+
+
+/* TOP */
+
+.main {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    clear: both;
+}
+
+.main img {
+    z-index: 5000;
+    left: 0;
+    padding-top: 34px;
+    height:100%;
+    border: 1px solid black;
+    position: absolute;
+    /* clear: both; */
+    /* display: inline-block; */
+}
+
+
+h1 {
+    z-index: 5001;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-align: left;
+    /* vertical-align: middle; */
+    padding: 350px 150px;
+    margin: 0;
+    position: absolute; 
+}
+
+
+
+/* 画面幅が680pxを下回った時 */
+@media (max-width: 680px) { 
+    .main img {
+        padding-top: 68px;
+    }   
+}
+
+
+
+
+
+
+
+/* ABOUT*/
+
+.container1 {
+    /* background-image: "./photo1"; */
+    width: 100%;
+    height: 100vh;
+    display: table;
+}
+
+.container1 img {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.about {
+    z-index: 9000;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    padding-right: 20%;
+    padding-left: 20%;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+  }
+
+
+
+
+
+
+/* MOVIE */
+
+.container2 {
+    background-color: rgb(26, 26, 26);
+    width: 100%;
+    height: 100vh;
+    display: table;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.movie {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+iframe {
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+}
+
+.movie-sentence {
+    width: 100%;
+    height: 100%;
+    padding-right: 20%;
+    padding-left: 20%;
+    display: table-cell;
+    /* vertical-align: middle; */
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    /* position: relative; */
+}
+
+
+/* 画面幅が560pxを下回った時 */
+@media (max-width: 560px) { 
+    iframe {
+        width: 100%;
+    }   
+}
+
+
+
+/* BLOG */
+
+.container3 {
+    width: 100%;
+    height: 100vh;
+    display: table;
+    background-color: rgb(36, 32, 32);
+    display: flex;
+    align-self: space-between;
+}
+
+.blog-centence {
+    background-color: rrgb(36, 32, 32);
+    height: 100%;
+    width: 50%;
+    min-width: 300px;
+  }
+
+.blog-centence p {
+    margin: 40px;
+}
+
+.container3 img {
+    width: 50%;
+}
+
+
+
+
+
+
+
+/* ACTIVITY */
+
+.container4 {
+    background-color: rgb(36, 32, 32);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.container4 img {
+    width: 50%;
+}
+
+.activity-centence {
+    height: 100%;
+    width: 50%;
+    /* min-width: 300px; */
+  }
+
+.activity-centence p {
+    margin: 40px;
+}
+
+
+
+
+
+
+
+
+.scroll {
+    position: absolute;
+    bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 9990;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-decoration: none;
+    padding-top: 40px;
+  }
+
+   .scroll span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+  }
+
+
+
+
+
+
+/* FOOTER */
+
+.contact {
+    z-index: 1;
+    background-color: rgba(33, 66, 66, 0.6);
+    height: 100vh;
+    width: 100%;   
+    align-content: center; 
+}
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html{    
+    background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat;
+    background-size: cover;
+    height:100%;
+}
+
+#feedback-page{
+    text-align:center;
+}
+
+
+#form-div {
+    background-color:rgba(72,72,72,0.4);
+    padding:30px;
+    width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.feedback-input {
+    color:#3c3c3c;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+    border-radius: 0;
+    line-height: 22px;
+    background-color: #fbfbfb;
+    padding: 6px 6px 6px 50px;
+    margin-bottom: 15px;
+    width:100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 3px solid rgba(0,0,0,0);
+}
+
+.feedback-input:focus{
+    background: #fff;
+    box-shadow: 0;
+    border: 3px solid #4e6c6e;
+    color: #4e6c6e;
+    outline: none;
+    padding: 13px 13px 13px 54px;
+}
+
+.focused{
+    color:#4e6c6e;
+    border:#4e6c6e solid 3px;
+}
+
+/* Icons ---------------------------------- */
+#name{
+    background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+    background-size: 23px 23px;
+    background-position: 12px 6px;
+    background-repeat: no-repeat;
+}
+
+#name:focus{
+    background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+    background-size: 30px 30px;
+    background-position: 8px 5px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#email{
+    background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+    background-size: 23px 23px;
+    background-position: 12px 6px;
+    background-repeat: no-repeat;
+}
+
+#email:focus{
+    background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+    background-size: 30px 30px;
+    background-position: 11px 8px;
+    background-repeat: no-repeat;
+}
+
+#comment{
+    background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+    background-size: 23px 23px;
+    background-position: 12px 6px;
+    background-repeat: no-repeat;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    line-height: 150%;
+    resize:vertical;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    background-color:white;
+}
+
+#button{
+    float:left;
+    width: 100%;
+    border: #fbfbfb solid 4px;
+    cursor:pointer;
+    background-color: #4e6c6e;
+    color:white;
+    padding-top:22px;
+    padding-bottom:22px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top:-4px;
+}
+
+#button:hover{
+    background-color: rgba(0,0,0,0);
+    color: #498f72;
+}
+    
+.submit:hover {
+    color: #729e91;
+}
+    
+.ease {
+    width: 0px;
+    height: 74px;
+    background-color: #fbfbfb;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+    -ms-transition: .3s ease;
+    transition: .3s ease;
+}
+
+.submit:hover .ease{
+  width:100%;
+  background-color:white;
+}
+
+@media (max-width: 500px) {
+    #form-div{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+.detail {
+    padding: 30px;
+}
+
+.detail p {
+    margin: 12px;
+    font-size: 12px;
+}  
+
+
+
+/* 画面幅が560pxを下回った時 */
+@media (max-width: 560px) { 
+    .contact {
+        width: 100%;   
+        align-content: center; 
+    }    
+}
+
+
+
+
+
+.sns {
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.sns a {
+    margin: 7px;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+
+.copyright {
+    z-index: 9990;
+    color: rgb(155, 155, 155);
+    font-size: 11px;
+    position: relative;
+    padding-top: 50px;
+    bottom: 0;
+}
